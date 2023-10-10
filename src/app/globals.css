@@ -1,3 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-color: black;
+  outline: 1px solid #4ed500; */
+}
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -85,7 +93,7 @@ body {
   overflow-x: hidden;
 }
 
-body {
+/* body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -104,4 +112,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */

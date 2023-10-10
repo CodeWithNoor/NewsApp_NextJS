@@ -1,0 +1,49 @@
+.row{
+    background: #fff;
+    /* height: 100vh; */
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+input{
+    display: block;
+    width: 30rem !important;
+    height: 3.3rem;
+    padding: 7px 20px;
+    border: 2px solid #000000;
+    border-radius: 2px;
+    color: black;
+    margin: 8px 0 !important;
+}
+.btn{
+    display: block;
+    width: 30rem !important;
+    height: 3.3rem !important;
+    padding: 7px 20px !important;
+    border: 2px solid #000000 !important;
+    border-radius: 2px !important;
+    color: black !important;
+    margin: 8px 0 !important;
+} 
+
+.container > .row > a{
+    display: block;
+    width: 30rem !important;
+    height: 3.3rem !important;
+    padding: 7px 20px !important;
+    border: 2px solid #000000 !important;
+    border-radius: 2px !important;
+    color: rgb(255, 255, 255) !important;
+    margin: 8px 0 !important;
+    text-align: center;
+    text-decoration: none;
+}

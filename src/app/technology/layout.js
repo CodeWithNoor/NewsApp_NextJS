@@ -1,10 +1,10 @@
 "use client"
 import React, { useState } from 'react'
-import News from './news/page'
 import LoadingBar from 'react-top-loading-bar'
 import Link from 'next/link'
+import Technology from './page'
 
-export default function Home() {
+export default function layout() {
   let pageSize = 15;
   let country = "us"
   let apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
@@ -19,7 +19,7 @@ export default function Home() {
         shadow={true}
         progress={progress}
       />
-      <Link href="/" className='text-decoration-none' ><News setProgress={setProgress} apiKey={apiKey} key={"general"} pageSize={pageSize} country={country} category={"general"} /></Link>
+      <Link href="/technology" className='text-decoration-none' ><Technology setProgress={setProgress} apiKey={apiKey} key={"technology"} pageSize={pageSize} country={country} category={"technology"} /></Link> 
     </main>
   )
 }
