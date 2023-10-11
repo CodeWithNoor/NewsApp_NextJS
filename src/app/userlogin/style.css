@@ -1,4 +1,4 @@
-form{
+.row{
     background: #fff;
     /* height: 100vh; */
     height: 80vh;
@@ -12,19 +12,20 @@ h1{
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 input{
     display: block;
     width: 30rem !important;
-    height: 3.3rem;
-    padding: 7px 20px;
-    border: 2px solid #000000;
-    border-radius: 2px;
-    color: black;
+    height: 3.3rem ;
+    padding: 7px 20px ;
+    border: 2px solid #000000 ;
+    border-radius: 2px ;
+    color: black ;
     margin: 8px 0 !important;
 }
-.btn{
+button{
     display: block;
     width: 30rem !important;
     height: 3.3rem !important;

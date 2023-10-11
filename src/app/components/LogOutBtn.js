@@ -16,7 +16,7 @@ const LogOutBtn = () => {
     }
     return (
         <>
-            <button className='px-3 py-2 text-white' style={{ border: "1px solid #fff", background: "#ffffff00" }} onClick={handleLogout}>Log Out</button>
+            <div onClick={handleLogout} className='px-3 py-2 text-white border btn-sm bg-black' style={{cursor: "pointer"}} id="btn">Log Out</div>
         </>
     )
 }
