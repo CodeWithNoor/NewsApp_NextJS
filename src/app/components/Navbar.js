@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import LogOutBtn from './LogOutBtn'
 
 // let btn = document.getElementsByClassName('nav-link');
 // for(let i=0; i<btn.length; i++){
@@ -46,7 +47,7 @@ const Navbar = () => {
                                 <Link className="nav-link text-light" href="/technology">Technology</Link>
                             </li>
                         </ul>
-                        <button className='btn btn-outline-info'>Sign Out</button>
+                       <LogOutBtn />
                     </div>
                 </div>
             </nav>

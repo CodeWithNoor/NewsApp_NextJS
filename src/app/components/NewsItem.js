@@ -1,6 +1,5 @@
 "use client"
 import React from 'react'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 
 const NewsItem = (props) => {
@@ -18,7 +17,7 @@ const NewsItem = (props) => {
                     <p className="card-text">{description}...</p>
                     <p className="card-text">{content}...</p>
                     <p className="card-text"><small className="text-muted"> By{!author ? "Anonymous" : author} on {new Date(date).toGMTString()}</small></p>
-                    <Link href={props.newsURL} className="btn btn-sm btn-dark">Read More</Link>
+                    <Link href={props.newsURL} className="py-2 px-3 text-white text-decoration-none" style={{background: "black"}}>Read More</Link>
                 </div>
             </div>
         </div>
