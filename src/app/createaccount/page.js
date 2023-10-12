@@ -33,7 +33,7 @@ const page = () => {
             setPassword("")
             router.push("/userlogin")
         } else {
-            alert(data.message)
+            toast.error(data.message)
         }
     }
 

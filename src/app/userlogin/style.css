@@ -1,7 +1,7 @@
-.row{
+#row{
     background: #fff;
     /* height: 100vh; */
-    height: 80vh;
+     height: 80vh !important;
     display: flex;
     flex-direction: column;
     justify-content: center;

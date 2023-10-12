@@ -1,10 +1,12 @@
 import { NextResponse } from 'next/server'
 
 // This function can be marked `async` if using `await` inside
+
+// middleware is run before any page component and is useful for authentication
 export function middleware(request) {
     const path = request.nextUrl.pathname
 
-    const isPublicPath = path === '/createaccount' || path === '/userlogin'
+    const isPublicPath = path === '/createaccount' || path === '/userlogin' || path === '/verifyemail'
 
     const token = request.cookies.get("token")?.value || ""
 
@@ -30,6 +32,7 @@ export const config = {
         '/health',
         '/createaccount',
         '/userlogin',
+        '/verifyemail',
 
     ]
 }

@@ -3,6 +3,7 @@ import { connectionStr } from "@/lib/db";
 import { Userdb } from "@/lib/model/Userdb";
 import { NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
+import { sendEmail } from "@/helpers/userverification"
 
 export async function POST(req) {
     await mongoose.connect(connectionStr)
@@ -29,8 +30,10 @@ export async function POST(req) {
         password: hashedPassword
     })
 
-
+    // send email to user
     const userSaved = await newUser.save()
     console.log(userSaved)
+    await sendEmail({ email, emailType: "VERIFY", userId: userSaved._id })
+
     return NextResponse.json({ message: "User Created Successfully", success: true }, { status: 200 })
 }

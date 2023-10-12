@@ -38,12 +38,12 @@ const page = () => {
     <>
       <div className="container">
         <ToastContainer />
-        <div className="row">
-            <h1 className={nunito.className}>SIGN IN</h1>
-            <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter Your Email' />
-            <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter Your Password' />
-            <button className='bg-black text-white' onClick={onSubmit}>SIGN IN</button>
-            <p className='text-black text-center mt-2'>No account? <Link href="/createaccount" className='text-info'>Get One Here</Link></p>
+        <div className="row" id='row'>
+          <h1 className={nunito.className}>SIGN IN</h1>
+          <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter Your Email' />
+          <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter Your Password' />
+          <button className='bg-black text-white' onClick={onSubmit}>SIGN IN</button>
+          <p className='text-black text-center mt-2'>No account? <Link href="/createaccount" className='text-info'>Get One Here</Link></p>
         </div>
       </div>
     </>
