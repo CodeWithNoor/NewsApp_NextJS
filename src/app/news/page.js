@@ -75,7 +75,7 @@ const News = (props) => {
 
                         <div className="row d-flex flex-row align-items-start justify-content-center">
                             {articles.map((element, index) => {
-                                return <div className="col-md-3 p-0" style={{ margin: '20px' }} key={index}>
+                                return <div className="col-md-3 p-0" style={{ margin: '20px 12px' }} key={index}>
                                     <NewsItem
                                         title={element.title ? element.title.slice(0, 35) : ""}
                                         description={element.description ? element.description.slice(0, 70) : "Description not found"}

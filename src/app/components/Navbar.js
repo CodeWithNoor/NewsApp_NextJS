@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import LogOutBtn from './LogOutBtn'
 
+
 // let btn = document.getElementsByClassName('nav-link');
 // for(let i=0; i<btn.length; i++){
 //     btn[i].addEventListener('click', function(){
@@ -47,7 +48,7 @@ const Navbar = () => {
                                 <Link className="nav-link text-light" href="/technology">Technology</Link>
                             </li>
                         </ul>
-                       <LogOutBtn id="btn" />
+                        <LogOutBtn id="btn"/>
                     </div>
                 </div>
             </nav>

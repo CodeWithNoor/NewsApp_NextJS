@@ -1,11 +1,11 @@
 "use client"
 import React, { useState } from 'react'
+import "./style.css"
 import Link from 'next/link'
 import { Nunito } from 'next/font/google'
 import { useRouter } from 'next/navigation'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import "./style.css"
 
 const nunito = Nunito({
   weight: "800",
@@ -44,6 +44,7 @@ const page = () => {
           <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter Your Password' />
           <button className='bg-black text-white' onClick={onSubmit}>SIGN IN</button>
           <p className='text-black text-center mt-2'>No account? <Link href="/createaccount" className='text-info'>Get One Here</Link></p>
+          {/* <p className='text-black text-center mt-2'><Link href="/forgotpassword" className='text-info'>forgot password</Link></p> */}
         </div>
       </div>
     </>

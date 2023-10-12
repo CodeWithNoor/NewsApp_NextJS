@@ -7,7 +7,7 @@ const NewsItem = (props) => {
 
     return (
         <div>
-            <div className="card" style={{ width: '21rem' }}>
+            <div className="card" style={{ boxShadow: "1px 1px 10px #00000094" }}>
                 <img src={!imageURL ? "https://www.mooc.org/hubfs/applications-of-computer-programming.jpg" : imageURL} className="card-img-top" alt="..." />
 
                 <div className="card-body">
