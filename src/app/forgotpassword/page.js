@@ -15,8 +15,8 @@ const ForgotPassword = () => {
     const [confirmPassword, setConfirmPassword] = useState("")
 
     const onSubmit = async (e) => {
-        e.preventDefault()
-        const res = await fetch("http://localhost:3000/api/users/forgotpassword", {
+        // e.preventDefault()
+        const res = await fetch("http://localhost:3000/api/users/resetpassword", {
             method: "POST",
             body: JSON.stringify({ password, confirmPassword })
         })

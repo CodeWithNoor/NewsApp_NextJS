@@ -2,7 +2,7 @@ import { connectionStr } from "@/lib/db";
 import { Userdb } from "@/lib/model/Userdb";
 import { NextResponse } from "next/server";
 import mongoose from "mongoose";
-
+import { sendEmail } from "@/helpers/resetpasswordverification";
 
 export async function POST(req) {
     await mongoose.connect(connectionStr)
@@ -16,15 +16,19 @@ export async function POST(req) {
         return NextResponse.json({ message: "User not found", success: false }, { status: 400 })
     }
 
+
     // create token data
-    const tokenData = {
-        id: user._id,
-        name: user.name,
-        email: user.email,
-    }
+    // const tokenData = {
+    //     id: user._id,
+    //     name: user.name,
+    //     email: user.email,
+    // }
 
     // create token
     // const token = jwt.sign(tokenData, process.env.JWT_SECRET, { expiresIn: "1d" })
+
+    // send email to user
+    await sendEmail({ email: user.email, emailType: "RESET", userId: user._id })
 
     const response = NextResponse.json({ message: "Please change your password", success: true }, { status: 200 })
 

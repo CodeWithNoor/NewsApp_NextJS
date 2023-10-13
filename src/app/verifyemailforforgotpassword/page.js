@@ -26,7 +26,7 @@ const VerifyEmailForForgotPassword = () => {
             if (data.success) {
                 alert("Email has been verified successfully")
                 setEmail("")
-                router.push(`/forgotpassword`)
+                router.push(`/verifyemailforgotpassword`)
             } else {
                 alert("Please enter valid email")
             }
