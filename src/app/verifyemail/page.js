@@ -44,6 +44,7 @@ export default function VerifyEmail() {
         <div className="container" id="emailverified">
             <ToastContainer />
             <h1 className="text-black text-center">Verify Email</h1>
+            <p className="text-black text-center"> Check the email if you are verified then access to login </p>
             <h5 className="text-white text-sm bg-secondary px-2 py-1">{token ? `${token}` : "no token"}</h5>
 
             {verified && (

@@ -15,7 +15,7 @@ export async function POST(request) {
     });
 
     if (!user) {
-        return NextResponse.json({ error: "Invalid token" }, { status: 400 })
+        return NextResponse.json({ error: "Invalid token", success: false }, { status: 400 })
     }
     console.log(user);
 
@@ -27,5 +27,5 @@ export async function POST(request) {
     return NextResponse.json({
         message: "Email verification successfully",
         success: true
-    })
+    }, {status: 200})
 }

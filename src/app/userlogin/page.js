@@ -43,8 +43,8 @@ const page = () => {
           <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter Your Email' />
           <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter Your Password' />
           <button className='bg-black text-white' onClick={onSubmit}>SIGN IN</button>
+          <p className='text-black text-center mt-2'><Link href="/verifyemailforforgotpassword" className='text-info cursor-pointer'>Forgot Password</Link></p>
           <p className='text-black text-center mt-2'>No account? <Link href="/createaccount" className='text-info'>Get One Here</Link></p>
-          {/* <p className='text-black text-center mt-2'><Link href="/forgotpassword" className='text-info'>forgot password</Link></p> */}
         </div>
       </div>
     </>

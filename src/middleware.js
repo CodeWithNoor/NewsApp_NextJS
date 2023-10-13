@@ -33,6 +33,5 @@ export const config = {
         '/createaccount',
         '/userlogin',
         '/verifyemail',
-
     ]
 }

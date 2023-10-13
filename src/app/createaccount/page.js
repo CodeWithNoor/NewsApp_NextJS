@@ -31,7 +31,7 @@ const page = () => {
             setName("")
             setEmail("")
             setPassword("")
-            router.push("/userlogin")
+            router.push(`/verifyemail?=`)
         } else {
             toast.error(data.message)
         }
@@ -47,9 +47,9 @@ const page = () => {
                         <input type="text" name="name" id="name" value={name} onChange={(e) => setName(e.target.value)} placeholder="Enter Your Name" />
                         <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter Your Email" />
                         <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter Your Password" />
-                        <input type="submit" className="bg-black text-white" />
+                        <input type="SUBMIT" className="bg-black text-white" />
                         <p className="text-black text-center mt-2">If you have already account? </p>
-                        <Link href={"/userlogin"} className="btn bg-black text-white">Sign In</Link>
+                        <Link href={"/userlogin"} className="btn bg-black text-white">SIGN IN</Link>
                     </form>
                 </div>
             </div>
