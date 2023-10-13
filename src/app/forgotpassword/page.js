@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 import Link from 'next/link'
 import "./style.css"
 import { Nunito } from 'next/font/google'
+import { useRouter } from 'next/navigation'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const nunito = Nunito({
     weight: "800",
@@ -11,30 +14,22 @@ const nunito = Nunito({
 })
 
 const ForgotPassword = () => {
-    const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
+    const router = useRouter()
+    const [newPassword, setNewPassword] = useState("")
+    // const [confirmPassword, setConfirmPassword] = useState("")
 
-    const onSubmit = async (e) => {
-        // e.preventDefault()
-        const res = await fetch("http://localhost:3000/api/users/resetpassword", {
-            method: "POST",
-            body: JSON.stringify({ password, confirmPassword })
+    const onSubmit = async () => {
+        const res = await fetch("http://localhost:3000/api/users/login", {
+            method: "PUT",
+            body: JSON.stringify({ newPassword })
         })
-
         const data = await res.json()
-        console.log(data)
-
         if (data.success) {
-            alert("Password has been changed successfully")
-            setPassword("")
-            setConfirmPassword("")
+            toast.success(data.message)
+            setNewPassword("")
+            router.push("/userlogin")
         } else {
-            alert("Something went wrong")
-        }
-        if (password !== confirmPassword) {
-            alert("Password doesn't match")
-        } else {
-            alert("Password match")
+            alert("something went wrong")
         }
     }
 
@@ -43,8 +38,8 @@ const ForgotPassword = () => {
             <div className="container" id='reset'>
                 <h1 className={`${nunito.className}`}>Reset Password</h1>
                 <form action="" onSubmit={onSubmit}>
-                    <input type="password" name='password' value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password' />
-                    <input type="password" name='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder='Confirm Password' />
+                    <input type="password" name='newPassword' value={newPassword} onChange={(e) => setNewPassword(e.target.value)} placeholder='Enter New Password' />
+                    {/* <input type="password" name='confirmPassword' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder='Confirm Password' /> */}
                     <input type="button" value="SUBMIT" className='bg-black text-white' />
                 </form>
                 <div className='mt-2'>
