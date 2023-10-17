@@ -1,25 +1,51 @@
+"use client"
+import React, { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { Nunito } from 'next/font/google'
+import "./style.css"
 
-const getdata = async () => {
-    const res = await fetch("http://localhost:3000/api/users/login")
-    const data = await res.json()
-    return data.users
-}
+const nunito = Nunito({
+    weight: "800",
+    subsets: ["latin"],
+    display: "swap",
+})
 
-const forgot = async() => {
-    const userData = await getdata()
-    console.log(userData)
+const page = () => {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const router = useRouter()
+
+    const updatePass = async () => {
+        const res = await fetch("http://localhost:3000/api/users/resetpassword", {
+            method: "PUT",
+            body: JSON.stringify({ email, password }),
+        })
+        const data = await res.json()
+        console.log(data)
+
+        if (data.success) {
+            alert(data.message)
+            setEmail("")
+            setPassword("")
+            router.push("/userlogin")
+        } else {
+            alert(data.error)
+        }
+    }
+
     return (
         <>
-            <div className="container">
-                {userData.map((item, id) => (
-                    <div key={id}>
-                        <h1>{item._id}</h1>
-                        <h1>{item.email}</h1>
-                    </div>
-                ))}
+            <div className="container" id='reset'>
+                <h1 className={`${nunito.className}`}>Reset Password</h1>
+
+                <div id="resetpass">
+                    <input type="email" name="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter Email' />
+                    <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Enter New Password' />
+                    <button type="submit" onClick={updatePass} className='bg-black text-white'>SIGN IN</button>
+                </div>
             </div>
         </>
     )
 }
 
-export default forgot
+export default page

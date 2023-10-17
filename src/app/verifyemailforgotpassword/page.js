@@ -52,9 +52,7 @@ export default function VerifyEmailForgotPassword() {
             {verified && (
                 <div className="d-flex flex-column align-items-center justify-content-center mt-5">
                     <h5 className="text-black">Your email verification has been successfully now update your password</h5>
-                    <div className="user-list">
-                        <Link href={`http://localhost:3000/verifyemailforgotpassword/`} className="bg-black text-white py-3 px-4 text-decoration-none my-3">RESET PASSWORD</Link>
-                    </div>
+                        <Link href={`/forgotpassword`} className="bg-black text-white py-3 px-4 text-decoration-none my-3">RESET PASSWORD</Link>
                 </div>
             )}
             {error && (

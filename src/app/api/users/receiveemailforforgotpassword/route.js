@@ -10,7 +10,7 @@ export async function POST(request) {
 
     const user = await Userdb.findOne({
         forgotPasswordToken: token,
-        forgotPasswordTokenExpiry: { $gt: Date.now() }
+        forgotPasswordTokenExpiry: { $gt: Date.now() },
     });
 
     if (!user) {
