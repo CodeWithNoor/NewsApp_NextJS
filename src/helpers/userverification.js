@@ -2,7 +2,6 @@ import nodemailer from 'nodemailer';
 import { Userdb } from "@/lib/model/Userdb";
 import bcryptjs from 'bcryptjs';
 
-
 export const sendEmail = async ({ email, emailType, userId }) => {
     try {
         // create a hased token
@@ -34,7 +33,7 @@ export const sendEmail = async ({ email, emailType, userId }) => {
             or copy and paste the link below in your browser. <br> ${process.env.DOMAIN}/verifyemail?token=${hashedToken}
             </p>`
         }
-        
+
         const mailresponse = await transport.sendMail(mailOptions);
         return mailresponse;
 
