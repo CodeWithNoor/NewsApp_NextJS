@@ -1,54 +1,78 @@
-#reset{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
+#reset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
 }
 
-#reset h1{
-    font-size: 2.5rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
+#reset h1 {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
-#resetpass{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+#resetpass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-input{
-    display: block;
-    width: 30rem !important;
-    height: 3.3rem ;
-    padding: 7px 20px ;
-    border: 2px solid #000000 ;
-    border-radius: 2px ;
-    color: black ;
-    margin: 8px 0 !important;
+input {
+  display: block;
+  width: 30rem !important;
+  height: 3.3rem;
+  padding: 7px 20px;
+  border: 2px solid #000000;
+  border-radius: 2px;
+  color: black;
+  margin: 8px 0 !important;
 }
-button{
-    display: block;
-    width: 30rem !important;
-    height: 3.3rem !important;
-    padding: 7px 20px !important;
-    border: 2px solid #000000 !important;
-    border-radius: 2px !important;
-    color: black !important;
-    margin: 8px 0 !important;
-} 
+button {
+  display: block;
+  width: 30rem !important;
+  height: 3.3rem !important;
+  padding: 7px 20px !important;
+  border: 2px solid #000000 !important;
+  border-radius: 2px !important;
+  color: black !important;
+  margin: 8px 0 !important;
+}
 
-#loginBtn{
-    display: block;
-    width: 30rem !important;
-    height: 3.3rem !important;
-    padding: 7px 20px !important;
-    border: 2px solid #000000 !important;
-    border-radius: 2px !important;
-    color: black !important;
-    margin: 8px 0 !important;
-    color: white !important;
+#loginBtn {
+  display: block;
+  width: 30rem !important;
+  height: 3.3rem !important;
+  padding: 7px 20px !important;
+  border: 2px solid #000000 !important;
+  border-radius: 2px !important;
+  color: black !important;
+  margin: 8px 0 !important;
+  color: white !important;
+}
+
+@media screen and (max-width: 768px) {
+  button {
+    width: 27rem !important;
+  }
+  input {
+    width: 27rem !important;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  button {
+    width: 22rem !important;
+  }
+  input {
+    width: 22rem !important;
+  }
+  h1 {
+    font-size: 2rem;
+  }
 }

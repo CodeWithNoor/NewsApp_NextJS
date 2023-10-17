@@ -48,3 +48,33 @@ button{
     text-align: center;
     text-decoration: none;
 } */
+
+@media screen and (max-width: 768px) {
+    .container > .row > a{
+        width: 27rem !important;
+    }
+    button{
+        width: 27rem !important;
+    }
+    input{
+        width: 27rem !important;
+    }
+    h1{
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container > .row > a{
+        width: 20rem !important;
+    }
+    button{
+        width: 20rem !important;
+    }
+    input{
+        width: 20rem !important;
+    }
+    h1{
+        font-size: 2rem;
+    }
+}

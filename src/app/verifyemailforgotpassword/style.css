@@ -27,3 +27,21 @@
   color: rgb(255, 255, 255) !important;
   margin: 8px 0 !important;
 }
+
+@media screen and (max-width: 768px) {
+  #container > button {
+    width: 27rem !important;
+  }
+  #container > input {
+    width: 27rem !important;
+  }
+
+  .bg-secondary {
+    font-size: 0.5rem !important;
+    text-align: center;
+  }
+  .flex-column > h5 {
+    font-size: 1rem !important;
+    text-align: center;
+  }
+}

@@ -26,6 +26,7 @@ const page = () => {
     const data = await res.json()
     if (data.success) {
       toast.success(data.message)
+      
       setEmail('')
       setPassword('')
       router.push('/')
