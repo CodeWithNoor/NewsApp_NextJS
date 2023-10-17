@@ -62,7 +62,7 @@ const Business = (props) => {
     return (
         <>
             <div className="container text-center my-5" >
-                <h1 className={nunito.className}>NewsApp - Top {CapitalizeFirstChar(`${props.category}`)} Headlines </h1>
+                <h1 className={`mb-4 ${nunito.className}`}>NewsApp - Top {CapitalizeFirstChar(`${props.category}`)} Headlines </h1>
                 {loading && <Spinner />}
 
                 <InfiniteScroll

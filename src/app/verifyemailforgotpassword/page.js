@@ -10,7 +10,7 @@ export default function VerifyEmailForgotPassword() {
     const [token, setToken] = useState("");
     const [verified, setVerified] = useState(false);
     const [error, setError] = useState(false);
-    const router = useRouter()
+    // const router = useRouter()
 
     const verifyUserEmail = async () => {
         try {
@@ -52,7 +52,7 @@ export default function VerifyEmailForgotPassword() {
             {verified && (
                 <div className="d-flex flex-column align-items-center justify-content-center mt-5">
                     <h5 className="text-black">Your email verification has been successfully now update your password</h5>
-                        <Link href={`/forgotpassword`} className="bg-black text-white py-3 px-4 text-decoration-none my-3">RESET PASSWORD</Link>
+                    <Link href={`/forgotpassword`} className="bg-black text-white py-3 px-4 text-decoration-none my-3">RESET PASSWORD</Link>
                 </div>
             )}
             {error && (
