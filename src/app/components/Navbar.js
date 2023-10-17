@@ -1,18 +1,19 @@
-import React from 'react'
+"use client"
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import LogOutBtn from './LogOutBtn'
 
-
-// let btn = document.getElementsByClassName('nav-link');
-// for(let i=0; i<btn.length; i++){
-//     btn[i].addEventListener('click', function(){
-//         let current = document.getElementsByClassName('active');
-//         current[0].className = current[0].className.replace('active', '');
-//         this.className += 'active';
-//     })
-// }
-
 const Navbar = () => {
+    const [show, setShow] = useState(true)
+
+    useEffect(() => {
+        if (window.location.pathname === "/userlogin" || window.location.pathname === "/createaccount" || window.location.pathname === "/verifyemailforforgotpassword" || window.location.pathname === "/forgotpassword") {
+            setShow(false)
+        } else {
+            setShow(true)
+        }
+    }, [])
+
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-black" >
@@ -48,7 +49,7 @@ const Navbar = () => {
                                 <Link className="nav-link text-light" href="/technology">Technology</Link>
                             </li>
                         </ul>
-                        <LogOutBtn id="btn"/>
+                        {show ? <LogOutBtn id="btn" /> : <></>}
                     </div>
                 </div>
             </nav>
