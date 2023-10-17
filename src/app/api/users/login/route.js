@@ -32,9 +32,7 @@ export async function POST(req) {
 
     // create token
     const token = jwt.sign(tokenData, process.env.JWT_SECRET, { expiresIn: "1d" })
-
     const response = NextResponse.json({ message: "User Logged in Successfully", success: true }, { status: 200 })
-
     response.cookies.set("token", token, {
         httpOnly: true
     })
@@ -42,30 +40,9 @@ export async function POST(req) {
     return response
 }
 
-
-// upadte password and confirm password 
-// export async function PUT(req) {
-//     await mongoose.connect(connectionStr)
-//     const reqBody = await req.json()
-//     const { email, password } = reqBody;
-
-//     const user = await Userdb.findOne({ email });
-//     if (!user) {
-//         return NextResponse.json({ error: 'User not found' });
-//     }
-
-//     // upadte password
-//     const Updatedpassword = await Userdb.findOneAndUpdate(email, { password: password });
-
-//     // Hash the new password
-//     const salt = await bcrypt.genSalt(10);
-//     const hashedPassword = await bcrypt.hash(Updatedpassword, salt);
-//     console.log(hashedPassword)
-
-//     // Update the user's password in the database
-//     user.Updatedpassword = hashedPassword;
-//     await user.save();
-
-//     return NextResponse.json({ message: 'Password updated successfully', success: true }, { status: 200 });
-
-// }
+// get data of all users
+export async function GET() {
+    await mongoose.connect(connectionStr)
+    const users = await Userdb.find({})
+    return NextResponse.json({ users, success: true }, { status: 200 })
+}

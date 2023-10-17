@@ -1,7 +1,29 @@
-#emailverified{
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+#emailverified,
+#container {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#container > input {
+  display: block;
+  width: 30rem !important;
+  height: 3.3rem;
+  padding: 7px 20px;
+  border: 2px solid #000000;
+  border-radius: 2px;
+  color: black;
+  margin: 8px 0 !important;
+}
+#container > button {
+  display: block;
+  width: 30rem !important;
+  height: 3.3rem !important;
+  padding: 7px 20px !important;
+  border: 2px solid #000000 !important;
+  border-radius: 2px !important;
+  color: rgb(255, 255, 255) !important;
+  margin: 8px 0 !important;
 }

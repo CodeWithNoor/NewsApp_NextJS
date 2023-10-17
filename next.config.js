@@ -7,8 +7,8 @@ const nextConfig = {
         MONGODB_URI: "mongodb://0.0.0.0:27017/newsApp",
         JWT_SECRET: "mysecretkey",
         DOMAIN: "http://localhost:3000",
-        NODEMAILER_NAME: "99837b1c10b00f",
-        NODEMAILER_PASSWORD: "4226870d2674e9"
+        NODEMAILER_NAME: "03f5fcb9aa8a4b",
+        NODEMAILER_PASSWORD: "a4b58d7cb210c5"
     }
 }
 

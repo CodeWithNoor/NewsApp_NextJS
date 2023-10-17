@@ -3,28 +3,29 @@ import mongoose from 'mongoose';
 import { Userdb } from '@/lib/model/Userdb';
 import { connectionStr } from '@/lib/db';
 import bcrypt from 'bcryptjs';
+import { NextResponse } from 'next/server';
 
-export async function POST(req, res) {
+export async function PUT(req) {
     await mongoose.connect(connectionStr);
-
-    const { token, password } = req.body;
+    
+    const { email, password } = req.body;
 
     // Find the user with the provided token
-    const user = await Userdb.findOne({ forgotPasswordToken: token });
+    const user = await Userdb.findOne({ email });
 
-    if (!user || user.forgotPasswordTokenExpiry < Date.now()) {
-        return res.status(400).json({ error: 'Invalid or expired token' });
+    if (!user) {
+        return NextResponse.json({ error: 'Invalid user', success: false }, { status: 400 });
     }
 
     // Hash the new password and update the user's password in the database
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
+    user.isVerified = true;
     user.password = hashedPassword;
-    user.forgotPasswordToken = undefined;
-    user.forgotPasswordTokenExpiry = undefined;
 
     await user.save();
 
-    return res.status(200).json({ message: 'Password reset successfully' });
+    const response = NextResponse.json({ message: "password changed Successfully", success: true }, { status: 200 })
+    return response
 } 

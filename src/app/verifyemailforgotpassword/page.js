@@ -1,15 +1,16 @@
 "use client";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from 'react-toastify';
 import "./style.css"
 import 'react-toastify/dist/ReactToastify.css';
+import Link from "next/link";
 
 export default function VerifyEmailForgotPassword() {
-
     const [token, setToken] = useState("");
     const [verified, setVerified] = useState(false);
     const [error, setError] = useState(false);
+    const router = useRouter()
 
     const verifyUserEmail = async () => {
         try {
@@ -50,12 +51,14 @@ export default function VerifyEmailForgotPassword() {
 
             {verified && (
                 <div className="d-flex flex-column align-items-center justify-content-center mt-5">
-                    <h5 className="text-black">Your email verification has been successfully  now update your password</h5>
-                    <Link href="/forgotpassword" className="bg-black text-white py-3 px-4 text-decoration-none my-3"> RESET PASSWORD </Link>
+                    <h5 className="text-black">Your email verification has been successfully now update your password</h5>
+                    <div className="user-list">
+                        <Link href={`http://localhost:3000/verifyemailforgotpassword/`} className="bg-black text-white py-3 px-4 text-decoration-none my-3">RESET PASSWORD</Link>
+                    </div>
                 </div>
             )}
             {error && (
-                <div> <h2 className="text-black bg-black text-white py-3 px-4 text-decoration-none my-3" >Error</h2> </div>
+                <div><h2 className="text-black bg-black text-white py-3 px-4 text-decoration-none my-3" >Error</h2></div>
             )}
         </div>
     )
