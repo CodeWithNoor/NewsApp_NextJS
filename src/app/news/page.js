@@ -4,7 +4,7 @@ import NewsItem from "../components/NewsItem";
 import Spinner from "../components/Spinner";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Nunito } from "next/font/google"
-import "./style.css"
+import "../style.css"
 
 const nunito = Nunito({
     weight: "400",
