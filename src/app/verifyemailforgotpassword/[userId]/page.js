@@ -11,8 +11,8 @@ const nunito = Nunito({
     display: "swap",
 })
 const usertoken = (props) => {
-    const token = props.params.token
-    console.log(token)
+    // const token = props.params.token
+    // console.log(token)
     const router = useRouter()
     const [password, setPassword] = useState("")
 
