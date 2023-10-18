@@ -7,16 +7,15 @@ import bcrypt from "bcryptjs";
 
 export async function PUT(req, content) {
     try {
-        const reqBody = content.params.userId;
-        const filter = { _id: reqBody };
-
+        const userId = content.params.userId;
         const payload = await req.json();
         const { password } = payload;
 
+        // Connect to the database
         await mongoose.connect(connectionStr);
 
         // Find the user by ID
-        const user = await Userdb.findById(reqBody);
+        const user = await Userdb.findById(userId);
 
         if (!user) {
             return NextResponse.json({ error: "User not found", success: false }, { status: 404 });
@@ -30,7 +29,7 @@ export async function PUT(req, content) {
         user.password = hashedPassword;
         await user.save();
 
-        return NextResponse.json({ message: "password has been changed successfully", success: true }, { status: 200 });
+        return NextResponse.json({ message: "Password has been changed successfully", success: true }, { status: 200 });
     } catch (error) {
         return NextResponse.json({ message: "Something went wrong", success: false }, { status: 500 });
     }

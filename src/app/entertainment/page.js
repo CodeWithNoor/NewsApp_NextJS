@@ -58,7 +58,6 @@ const Entertainment = (props) => {
         setLoading(false);
     };
 
-
     return (
         <>
             <div className="container text-center my-5" >
@@ -89,7 +88,6 @@ const Entertainment = (props) => {
                                 </div>
                             })}
                         </div>
-
                     </div>
                 </InfiniteScroll>
             </div>

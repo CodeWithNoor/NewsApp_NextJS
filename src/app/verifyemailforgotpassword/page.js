@@ -16,7 +16,7 @@ export default function VerifyEmailForgotPassword() {
         try {
             const res = await fetch("http://localhost:3000/api/users/receiveemailforforgotpassword", {
                 method: "POST",
-                body: JSON.stringify({ token }),
+                body: JSON.stringify({ token })
             })
             const data = await res.json();
             console.log(data);
@@ -52,7 +52,7 @@ export default function VerifyEmailForgotPassword() {
             {verified && (
                 <div className="d-flex flex-column align-items-center justify-content-center mt-5">
                     <h5 className="text-black">Your email verification has been successfully now update your password</h5>
-                    <Link href={`/forgotpassword`} className="bg-black text-white py-3 px-4 text-decoration-none my-3">RESET PASSWORD</Link>
+                    <Link href={`/verifyemailforgotpassword/${token}`} className="bg-black text-white py-3 px-4 text-decoration-none my-3">RESET PASSWORD</Link>
                 </div>
             )}
             {error && (

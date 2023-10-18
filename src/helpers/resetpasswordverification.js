@@ -1,12 +1,12 @@
 import nodemailer from 'nodemailer';
 import { Userdb } from "@/lib/model/Userdb";
-import bcryptjs from 'bcryptjs';
+// import bcryptjs from 'bcryptjs';
 
 
 export const sendEmail = async ({ email, emailType, userId }) => {
     try {
         // create a hased token
-        const hashedToken = await bcryptjs.hash(userId.toString(), 10)
+        const hashedToken = await (userId)
 
         if (emailType === "VERIFY") {
             await Userdb.findByIdAndUpdate(userId,
