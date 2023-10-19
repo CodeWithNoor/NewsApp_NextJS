@@ -4,7 +4,7 @@ import Entertainment from './page'
 import LoadingBar from 'react-top-loading-bar'
 import Link from 'next/link'
 
-export default function layout() {
+export default function Layout() {
     let pageSize = 15;
     let country = "us"
     let apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;

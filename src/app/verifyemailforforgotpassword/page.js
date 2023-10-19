@@ -44,9 +44,9 @@ const VerifyEmailForForgotPassword = () => {
             <div className="container" id='forgot'>
                 <h1 className={`${nunito.className}`}>Verify Email For Forgot Password</h1>
                 <input type="email" name='email' value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Enter Your Email' />
-                <button className='bg-black text-white' onClick={verificationEmail}>VERIFY EMAIL</button>
-                <p className='p-0 m-0 text-center mt-3 fs-6'> If you have don't reset password? </p>
-                <button className='bg-black text-white' onClick={handleSignin}>SIGN IN</button>
+                <button className="bg-black text-white" onClick={verificationEmail}>VERIFY EMAIL</button>
+                <p className="p-0 m-0 text-center mt-3 fs-6">If you have don&#39;t reset password?</p>
+                <button className="bg-black text-white" onClick={handleSignin}>SIGN IN</button>
             </div>
         </>
     )

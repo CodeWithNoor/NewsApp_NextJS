@@ -12,7 +12,7 @@ const nunito = Nunito({
   subsets: ['latin'],
   display: 'swap'
 })
-const page = () => {
+const Page = () => {
   const router = useRouter()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -52,4 +52,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

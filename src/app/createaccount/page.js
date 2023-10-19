@@ -13,7 +13,7 @@ const nunito = Nunito({
     display: "swap"
 })
 
-const page = () => {
+const Page = () => {
     const router = useRouter()
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -57,4 +57,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

@@ -10,7 +10,7 @@ import Link from 'next/link'
 // import Sports from './sports/page'
 // import Technology from './technology/page'
 
-export default function layout() {
+export default function Layout() {
   let pageSize = 15;
   let country = "us"
   let apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;

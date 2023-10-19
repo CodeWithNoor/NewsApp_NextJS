@@ -10,7 +10,7 @@ const nunito = Nunito({
     subsets: ["latin"],
     display: "swap",
 })
-const usertoken = (props) => {
+const Usertoken = (props) => {
     // const token = props.params.token
     // console.log(token)
     const router = useRouter()
@@ -54,4 +54,4 @@ const usertoken = (props) => {
     )
 }
 
-export default usertoken
+export default Usertoken
