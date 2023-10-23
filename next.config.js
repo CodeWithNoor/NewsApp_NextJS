@@ -6,7 +6,7 @@ const nextConfig = {
         NEXT_PUBLIC_NEWS_API_KEY: "5f2e76e35f7840559e9098782b489b26",
         MONGODB_URI: "mongodb://0.0.0.0:27017/newsApp",
         JWT_SECRET: "mysecretkey",
-        DOMAIN: "https://news-app-next-js-one.vercel.app",
+        DOMAIN: "http://localhost:3000",
         NODEMAILER_NAME: "03f5fcb9aa8a4b",
         NODEMAILER_PASSWORD: "a4b58d7cb210c5"
     }
