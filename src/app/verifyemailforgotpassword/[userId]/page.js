@@ -18,7 +18,7 @@ const Usertoken = (props) => {
 
     // call api for single users
     const userData = async () => {
-        const res = await fetch(`http://localhost:3000/api/users/receiveemailforforgotpassword/${props.params.userId}`)
+        const res = await fetch(`https://news-app-next-js-one.vercel.app/api/users/receiveemailforforgotpassword/${props.params.userId}`)
         const data = await res.json()
         return data.users
     }
@@ -29,7 +29,7 @@ const Usertoken = (props) => {
 
     // update password
     const updatePass = async () => {
-        const response = await fetch(`http://localhost:3000/api/users/receiveemailforforgotpassword/${props.params.userId}`, {
+        const response = await fetch(`https://news-app-next-js-one.vercel.app/api/users/receiveemailforforgotpassword/${props.params.userId}`, {
             method: "PUT",
             body: JSON.stringify({ password }),
         })

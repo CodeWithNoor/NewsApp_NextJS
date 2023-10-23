@@ -19,7 +19,7 @@ const Page = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault()
-    const res = await fetch("http://localhost:3000/api/users/login", {
+    const res = await fetch("https://news-app-next-js-one.vercel.app/api/users/login", {
       method: "POST",
       body: JSON.stringify({ email, password })
     })

@@ -14,7 +14,7 @@ export default function VerifyEmailForgotPassword() {
 
     const verifyUserEmail = async () => {
         try {
-            const res = await fetch("http://localhost:3000/api/users/receiveemailforforgotpassword", {
+            const res = await fetch("https://news-app-next-js-one.vercel.app/api/users/receiveemailforforgotpassword", {
                 method: "POST",
                 body: JSON.stringify({ token })
             })

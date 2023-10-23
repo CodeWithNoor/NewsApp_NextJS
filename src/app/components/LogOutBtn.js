@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const LogOutBtn = () => {
     const handleLogout = async () => {
-        const res = await fetch("http://localhost:3000/api/users/logout")
+        const res = await fetch("https://news-app-next-js-one.vercel.app/api/users/logout")
         const data = await res.json()
         if (data.success) {
             toast.success(data.message)
